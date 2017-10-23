@@ -69,6 +69,7 @@ RehabMan大神推荐将部分注入的kext放入到/S/L/E (或者 /L/E 在 10.11
 希望能对许多正在等待升级10.13的小伙伴有帮助
 
 欢迎各位小伙伴们来帮我完善～
+
 ---
 # 特别感谢
 - [@RehabMan](https://github.com/RehabMan)、[tgmac](https://github.com/RehabMan)提供的有关文件
