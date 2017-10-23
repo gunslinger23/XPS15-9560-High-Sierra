@@ -74,5 +74,5 @@ RehabMan大神推荐将部分注入的kext放入到/S/L/E (或者 /L/E 在 10.11
 
 ---
 # 特别感谢
-- [@RehabMan](https://github.com/RehabMan)、[tgmac](https://github.com/RehabMan)提供的有关文件
+- [@RehabMan](https://github.com/RehabMan)、[tgmac](https://www.tonymacx86.com/members/tgmac.928166/)提供的有关文件
 - [blazinsmokey](https://www.tonymacx86.com/members/blazinsmokey.1188623/)解决了wifi睡眠后很慢的问题
