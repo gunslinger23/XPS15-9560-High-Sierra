@@ -1,7 +1,7 @@
 # XPS15-9560-High-Sierra
 ## 本机配置
 - CPU：Intel I7 7700HQ
-- 内存：原装16G 2400 DDR4
+- 内存：原装16G 2400MHz DDR4
 - 硬盘：三星PM961 NVMe 512G(磨人的小妖精)
 - 网卡：DW1830
 ### 配置提示
@@ -27,6 +27,7 @@
 教程基本上大同小异，各位请细心参考即可！
 #### 注意
 - SSD用户最好先把分区转换为APFS(貌似安装时也会转换)
+- 进入系统后别急急忙忙登陆你尊贵的AppleID(原因请看下文)
 
 ## 从老版本系统上更新
 > 如果你想用全新的APFS，建议你还是全新安装好了！(我也是从10.12升级，不知道是不是我的姿势不正确而失败)
@@ -45,6 +46,18 @@ RehabMan大神推荐将部分注入的kext放入到/S/L/E (或者 /L/E 在 10.11
 3. 打开EFI/clover/kext
   - 1.保留`BrcmFirmwareData.kext` `BrcmPatchRAM2.kext`(2个驱动放在SLE里面会出问题，放在Clover注入才没问题)
   - 2.删掉其余所有kext
+  
+# 登陆你的AppleID(不用白果三码)
+使用白果三码注意机子型号要匹配！否则我也不知道官方会对你的账号做什么 =w=
+### 注意
+请保证目前你的电脑没有登陆过AppleID
+### 开始你的操作
+工具：`Clover Configurator V4.53`
+1. 打开config.plist
+2. SMBIOS栏 在Serial Number隔壁有个Generate New小按钮，按下去随机生成Serial Number(不断按到你乐意停下来为止)
+3. Systeam Parameters栏 Custom UUID下也有一个Generate New小按钮，重复
+4. Rt Variables栏 ROM下面也有一个Generate New小按钮，重复
+5. 保存(废话)
 
 # 尾巴
 这破系统已经浪费里我许多时间，但是换回来的使用体验是值得的
