@@ -239,10 +239,6 @@
 				<key>TableId</key>
 				<string>PtidDevc</string>
 			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>BGRT</string>
-			</dict>
 		</array>
 		<key>ResetAddress</key>
 		<string>0x0CF9</string>
@@ -257,6 +253,8 @@
 				<key>PStates</key>
 				<false/>
 			</dict>
+			<key>PluginType</key>
+			<string>1</string>
 		</dict>
 		<key>SortedOrder</key>
 		<array>
@@ -287,19 +285,19 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>darkwake=1 -disablegfxfirmware</string>
+		<string>-v dart=0 darkwake=1 -disablegfxfirmware</string>
 		<key>CustomLogo</key>
 		<string>Alternate</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
-		<string>macOS</string>
+		<string>Mac OS</string>
 		<key>Legacy</key>
 		<string>LegacyBiosDefault</string>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>0</integer>
+		<integer>5</integer>
 		<key>XMPDetection</key>
 		<false/>
 	</dict>
@@ -387,7 +385,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>embedded</string>
+		<string>bluemac</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -496,38 +494,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>AirPortBrcm4360 - fcvo</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				gflSqgAAdSk=
-				</data>
-				<key>Name</key>
-				<string>AirPortBrcm4360</string>
-				<key>Replace</key>
-				<data>
-				gflSqgAAZpY=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch CC to #a</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				QYP8/3QsSA==
-				</data>
-				<key>Name</key>
-				<string>AirportBrcm4360</string>
-				<key>Replace</key>
-				<data>
-				ZscGI2HrKw==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Bypass Thunderbolt 3 blacklist by patching shouldSkipEnumeration function, enables Razer Core and early TB3 devices (credit kid2010, netkas, syscl)</string>
 				<key>Disabled</key>
 				<false/>
@@ -544,6 +510,22 @@
 				VUiJ5THAXcNBVUFUU0iB7DgB
 				</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Enable BT4LE-Handoff-Hotspot</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				SIX/dEdIiwc=
+				</data>
+				<key>Name</key>
+				<string>IOBluetoothFamily</string>
+				<key>Replace</key>
+				<data>
+				Qb4PAAAA60Q=
+				</data>
+			</dict>
 		</array>
 	</dict>
 	<key>RtVariables</key>
@@ -554,7 +536,7 @@
 		<string>0x67</string>
 		<key>ROM</key>
 		<data>
-		JVzQluhm
+		dzhA3JaZ
 		</data>
 	</dict>
 	<key>SMBIOS</key>
@@ -564,17 +546,17 @@
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP141.88Z.0167.B00.1708080034</string>
+		<string>MBP143.88Z.0167.B00.1708080129</string>
 		<key>Board-ID</key>
-		<string>Mac-B4831CEBD52A0C4C</string>
+		<string>Mac-551B86E5744E2388</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>removed for problem reporting</string>
+		<string>C02709609GUFF4KA8</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
-		<string>MacBookPro14,1</string>
+		<string>MacBookPro14,3</string>
 		<key>ChassisAssetTag</key>
 		<string>MacBook-Aluminum</string>
 		<key>ChassisManufacturer</key>
@@ -584,7 +566,7 @@
 		<key>Family</key>
 		<string>MacBook Pro</string>
 		<key>FirmwareFeatures</key>
-		<string>0xFC0FE136</string>
+		<string>0xFC0FE13E</string>
 		<key>FirmwareFeaturesMask</key>
 		<string>0xFF1FFF3F</string>
 		<key>LocationInChassis</key>
@@ -596,13 +578,11 @@
 		<key>PlatformFeature</key>
 		<string>0x1A</string>
 		<key>ProductName</key>
-		<string>MacBookPro14,1</string>
+		<string>MacBookPro14,3</string>
 		<key>SerialNumber</key>
-		<string>removed for problem reporting</string>
+		<string>C02TCU89HTD5</string>
 		<key>SmUUID</key>
-		<string>removed for problem reporting</string>
-		<key>Trust</key>
-		<true/>
+		<string>5938DFAB-47D4-467B-AB70-EB055F98298B</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
@@ -611,7 +591,7 @@
 		<key>BacklightLevel</key>
 		<string>0</string>
 		<key>CustomUUID</key>
-		<string>removed for problem reporting</string>
+		<string>5938DFAB-47D4-467B-AB70-EB055F98298B</string>
 		<key>InjectKexts</key>
 		<string>Yes</string>
 		<key>InjectSystemID</key>
