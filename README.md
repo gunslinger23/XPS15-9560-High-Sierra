@@ -26,7 +26,9 @@
 ### 未知问题(没测试)
 - HDMI
 ---
-# 安装
+
+# 1.安装
+
 ## 全新安装
 由于我很懒，你们直接参考 [RehabMan](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/) 的教程好了～
 
@@ -44,7 +46,7 @@
  > SMBIOS机型更改为MacBookPro14,3(配置与XPS15 9560更接近，支持KabyLake) 如果你想用自己的config.plist，请注意修改
 2. 直接开始你的更新旅程！(遇到坑我也帮不了你QwQ，找大神求助吧)
 
-# kext问题
+# 2.kext问题
 RehabMan大神推荐将部分注入的kext放入到/S/L/E (或者 /L/E 在 10.11)
 周到的我已经把全部能放进/S/L/E的kext全部放好在kext-install文件夹内
 ### 操作
@@ -54,7 +56,7 @@ RehabMan大神推荐将部分注入的kext放入到/S/L/E (或者 /L/E 在 10.11
   - 1.保留`BrcmFirmwareData.kext` `BrcmPatchRAM2.kext`(2个驱动放在SLE里面会出问题，放在Clover注入才没问题)
   - 2.删掉其余所有kext
   
-# 登陆你的AppleID(不用白果三码)
+# 3.登陆你的AppleID(不用白果三码)
 使用白果三码注意机子型号要匹配！否则我也不知道官方会对你的账号做什么 =w=
 ### 注意
 请保证目前你的电脑没有登陆过AppleID
@@ -66,7 +68,7 @@ RehabMan大神推荐将部分注入的kext放入到/S/L/E (或者 /L/E 在 10.11
 4. Rt Variables栏 ROM下面也有一个Generate New小按钮，重复
 5. 保存(废话)
 
-# 解决二合一耳机接口
+# 4.解决二合一耳机接口
 1. 解压`ComboJack Installer.zip`(感谢[KNNSpeed](https://www.tonymacx86.com/threads/guide-dell-xps-15-9560-4k-touch-1tb-ssd-32gb-ram-100-adobergb.224486/page-9#post-1539760)提供的补丁)
 2. 使用终端cd到`ComboJack Installer`文件夹
 3. 执行命令`./install.sh`(需要输入密码)
