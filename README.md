@@ -5,6 +5,7 @@
 - 硬盘：三星PM961 NVMe 512G(磨人的小妖精)
 - 网卡：DW1830
 - 屏幕分辨率：1080p
+
 ### 配置提示
 原装配的killer网卡是无解的！请用usb网卡或者直接换一个吧qwq
 
@@ -15,11 +16,13 @@
 ## 使用情况
 - 除了触控板无法达到白苹果的体验外，其他基本跟白苹果没啥区别～
 - 亮度可以调整保存
+- 通过安装补丁后可完美使用二合一耳机口
+
 ### 已知问题
-- 无法使用耳机(暂时没弄清楚问题所在)
-- 雷电3接口有问题(没有测试过)
+- 雷电3接口插雷电设备可能会有问题(没有测试)
 - 读卡器无法使用
 - 独显无法使用
+
 ### 未知问题(没测试)
 - HDMI
 ---
@@ -62,6 +65,15 @@ RehabMan大神推荐将部分注入的kext放入到/S/L/E (或者 /L/E 在 10.11
 3. Systeam Parameters栏 Custom UUID下也有一个Generate New小按钮，重复
 4. Rt Variables栏 ROM下面也有一个Generate New小按钮，重复
 5. 保存(废话)
+
+# 解决二合一耳机接口
+1. 解压`ComboJack Installer.zip`(感谢[KNNSpeed](https://www.tonymacx86.com/threads/guide-dell-xps-15-9560-4k-touch-1tb-ssd-32gb-ram-100-adobergb.224486/page-9#post-1539760)提供的补丁)
+2. 使用终端cd到`ComboJack Installer`文件夹
+3. 执行命令`./install.sh`(需要输入密码)
+4. 重启
+
+### 使用提示
+插入耳机后弹出提示窗口(根据提示选择你插入的设备类型即可)
 
 # 尾巴
 这破系统已经浪费里我许多时间，但是换回来的使用体验是值得的
