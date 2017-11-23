@@ -21,7 +21,7 @@
 - 读卡器无法使用(BIOS禁用可以省电)
 - 独显无法使用
 - 触摸板与windows系统下比较还是差一点
-- 插入耳机后在未完全进入睡眠时唤醒会出现无无声(貌似是个bug)
+- 插入耳机后在睡眠唤醒后会出现破音(貌似是个bug，临时解决方法看第四步)
 
 ### 未知问题(没测试)
 - HDMI
@@ -34,7 +34,7 @@
 # 第一步：安装
 
 ## 全新安装(大概流程)
-1. [制作启动U盘和启动教程](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/)
+1. 制作启动U盘和启动-[教程](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/)
 2. 安装MacOS
 3. 把Clover安装到硬盘EFI中(详细教程自己找)
 
@@ -89,6 +89,7 @@
 
 ### 使用提示
 - 插入耳机后弹出提示窗口(根据提示选择你插入的设备类型即可)
+- 睡眠唤醒后请把耳机拔出再插进去重新选择类型使其正常工作
 - 虽然耳机能用了，不要对耳机音质抱有任何希望！买个DAC才是正解！
 
 # 尾巴
