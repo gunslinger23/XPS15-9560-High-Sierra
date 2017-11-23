@@ -89,8 +89,8 @@
 4. 重启
 
 # 系统小版本更新
-所以更新前请把我提供的CLOVER/kext/Other里的kext复制到你的EFI/clover/kext/Other中，在更新完毕后即可还原回去。
- **注意**
+更新前请删掉你的EFI/clover/kext/Other中所有kext(注意备份)，然后把我提供的CLOVER/kext/Other里的kext复制进去，在更新完毕后即可还原回去。
+### 注意
 > kext安装在SLE或Clover里都必须要这样做，防止启动时引发错误而造成的更新文件损坏
 
 ### 使用提示
