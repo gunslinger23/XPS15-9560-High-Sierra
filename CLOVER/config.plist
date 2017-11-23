@@ -307,12 +307,6 @@
 	</dict>
 	<key>CPU</key>
 	<dict>
-		<key>C2</key>
-		<true/>
-		<key>C4</key>
-		<true/>
-		<key>C6</key>
-		<true/>
 		<key>HWPEnable</key>
 		<true/>
 		<key>UseARTFrequency</key>
@@ -346,12 +340,10 @@
 		</dict>
 		<key>USB</key>
 		<dict>
-			<key>AddClockID</key>
-			<true/>
 			<key>FixOwnership</key>
-			<true/>
+			<false/>
 			<key>Inject</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>DisableDrivers</key>

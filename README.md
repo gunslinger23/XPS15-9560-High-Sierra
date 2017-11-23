@@ -3,60 +3,68 @@
 - CPU：Intel I7 7700HQ
 - 内存：原装16G 2400MHz DDR4
 - 硬盘：三星PM961 NVMe 512G(磨人的小妖精)
-- 网卡：DW1830
-- 屏幕分辨率：1080p
+- WIFI网卡：DW1830
+- 屏幕分辨率：1080p(提供的Clover已添加支出4k屏kext，无需担心~)
 
-### 配置提示
-原装配的killer网卡是无解的！请用usb网卡或者直接换一个吧qwq
+### 关于WIFI网卡问题
+原装配的killer网卡是无解的！请用usb网卡或者直接换一个免驱的吧qwq
 
 ## 使用10.13优势
 - 苹果终于支持第三方NVMe SSD(原生支持，无需安装任何驱动，对于PM961来说是一件大好事！)
-- 采用全新的APFS文件系统(据说是对SSD有神秘加成，HDD最好不要用)
+- 采用全新的APFS文件系统(对SSD有神秘加成，HDD最好不要用)
 
 ## 使用情况
-- 除了触控板无法达到白苹果的体验外，其他基本跟白苹果没啥区别～
-- 亮度可以调整保存
-- 通过安装补丁后可完美使用二合一耳机口
+- 除了下面问题以外，其他全部都能用！
 
 ### 已知问题
-- 雷电3接口插雷电设备可能会有问题(没有测试)
-- 读卡器无法使用
+- 雷电3接口不支持热插拔
+- 读卡器无法使用(BIOS禁用可以省电)
 - 独显无法使用
+- 触摸板与windows系统下比较还是差一点
+- 插入耳机后在未完全进入睡眠时唤醒会出现无无声(貌似是个bug)
 
 ### 未知问题(没测试)
 - HDMI
 ---
 
-# 1.安装
+# 第一步：安装
 
-## 全新安装
-由于我很懒，你们直接参考 [RehabMan](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/) 的教程好了～
+## 全新安装(大概流程)
+1. [制作启动U盘和启动教程](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/)
+2. 安装MacOS
+3. 把Clover安装到硬盘EFI中(详细教程自己找)
 
-教程基本上大同小异，各位请细心参考即可！
 #### 注意
-- SSD用户最好先把分区转换为APFS(貌似安装时也会转换)
-- 进入系统后别急急忙忙登陆你尊贵的AppleID(原因请看下文)
-- 4K分辨率用户需要安装[CoreDisplayFixup.kext](https://github.com/PMheart/CoreDisplayFixup)
+- 安装在SSD中最好使用APFS，你可以先转换一下(貌似安装时也会转换)。若安装在HDD中请不要使用(非常非常慢)
+- 进入系统后别急急忙忙登陆你尊贵的AppleID(请看第3步)
 
-## 从老版本系统上更新
-> 如果你想用全新的APFS，建议你还是全新安装好了！(我也是从10.12升级，不知道是不是我的姿势不正确而失败)
-#### 依然你还是要尝试就提醒一下你吧
-1. 把SSDT补丁、kext和config.plist放到原来的Clover(最好是最新版，旧版不支持10.13)里面即可
+接下来看第二步
+
+## 从老版本系统上更新(未测试)
+> 不想折腾的话，我建议你还是全新安装好了！(我也是想从10.12升级，可能是我的姿势不正确而失败)
+#### 依然你还是要折腾就提醒一下你吧
+1. 把SSDT补丁、kext和config.plist可继续沿用
+2. [Clover](http://sourceforge.net/projects/cloverefiboot/)注意更新到最新版
+3. APFS需要UEFI驱动支持，请把CLOVER/drivers64UEFI/apfs.efi添加到你的Clover中
  **注意**
- > SMBIOS机型更改为MacBookPro14,3(配置与XPS15 9560更接近，支持KabyLake) 如果你想用自己的config.plist，请注意修改
-2. 直接开始你的更新旅程！(遇到坑我也帮不了你QwQ，找大神求助吧)
+ > 提供的config.plist中SMBIOS机型更改为MacBookPro14,3(配置与XPS15 9560更接近，支持KabyLake)，修改SMBIOS有风险
 
-# 2.kext问题
-RehabMan大神推荐将部分注入的kext放入到/S/L/E (或者 /L/E 在 10.11)
-周到的我已经把全部能放进/S/L/E的kext全部放好在kext-install文件夹内
-### 操作
-1. 把S/L/E文件夹里面的全部kext放到/S/L/E中(注意权限问题)
-2. 先重启机子以防出问题再接着第三步
-3. 打开EFI/clover/kext
-  - 1.保留`BrcmFirmwareData.kext` `BrcmPatchRAM2.kext`(2个驱动放在SLE里面会出问题，放在Clover注入才没问题)
+# 第二步：安装kext
+> RehabMan建议将部分注入的kext放入到/S/L/E中，已获得更接近白苹果的启动方式。
+## 以下方法二选一
+### 1.安装kext到Clover
+1. 把Post-install/SLE-Kexts文件夹里面的全部kext复制到EFI/clover/kext/Other中
+
+### 2.安装kext到SLE(推荐)
+1. 把Post-install/SLE-Kexts文件夹里面的全部kext复制到/S/L/E中
+2. 请使用`Kext Utility`修复权限并建立缓存
+3. 先重启机子以防出问题再接着第四步
+4. 打开EFI/clover/kext/Other
+  - 1.保留`CoreDisplayFixup.kext`(仅针对4K屏用户)
   - 2.删掉其余所有kext
+  - 3.把Post-install/CLOVER-Kexts文件夹里的全部kext复制进去
   
-# 3.登陆你的AppleID(不用白果三码)
+# 第三步：登陆你的AppleID(不用白果三码)
 使用白果三码注意机子型号要匹配！否则我也不知道官方会对你的账号做什么 =w=
 ### 注意
 请保证目前你的电脑没有登陆过AppleID
@@ -68,8 +76,8 @@ RehabMan大神推荐将部分注入的kext放入到/S/L/E (或者 /L/E 在 10.11
 4. Rt Variables栏 ROM下面也有一个Generate New小按钮，重复
 5. 保存(废话)
 
-# 4.解决二合一耳机接口
-1. 解压`ComboJack Installer.zip`(感谢[KNNSpeed](https://www.tonymacx86.com/threads/guide-dell-xps-15-9560-4k-touch-1tb-ssd-32gb-ram-100-adobergb.224486/page-9#post-1539760)提供的补丁)
+# 第四步：解决二合一耳机接口
+1. 解压Post-install/ComboJack Installer.zip (感谢[KNNSpeed](https://www.tonymacx86.com/threads/guide-dell-xps-15-9560-4k-touch-1tb-ssd-32gb-ram-100-adobergb.224486/page-9#post-1539760)提供的补丁)
 2. 使用终端cd到`ComboJack Installer`文件夹
 3. 执行命令`./install.sh`(需要输入密码)
 4. 重启
@@ -80,15 +88,15 @@ RehabMan大神推荐将部分注入的kext放入到/S/L/E (或者 /L/E 在 10.11
 # 尾巴
 这破系统已经浪费里我许多时间，但是换回来的使用体验是值得的
 
-我只是看国内没人弄才搞里这东西
-
 我遇到的坑都在这里都告诉大家了
 
 希望能对许多正在等待升级10.13的小伙伴有帮助
+
+小版本更新可能因为kext问题而导致启动不了，我会尽力更新一下kext
 
 欢迎各位小伙伴们来帮我完善～
 
 ---
 # 特别感谢
-- [@RehabMan](https://github.com/RehabMan)、[tgmac](https://www.tonymacx86.com/members/tgmac.928166/)提供的有关文件
-- [blazinsmokey](https://www.tonymacx86.com/members/blazinsmokey.1188623/)解决了wifi睡眠后很慢的问题
+- [@RehabMan](https://github.com/RehabMan)、[tgmac](https://www.tonymacx86.com/members/tgmac.928166/)提供的教程和有关文件
+- [blazinsmokey](https://www.tonymacx86.com/members/blazinsmokey.1188623/)解决了wifi睡眠后无法使用的问题
