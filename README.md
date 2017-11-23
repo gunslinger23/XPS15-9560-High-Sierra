@@ -1,4 +1,4 @@
-# XPS15-9560-High-Sierra
+# 前言
 ## 本机配置
 - CPU：Intel I7 7700HQ
 - 内存：原装16G 2400MHz DDR4
@@ -25,6 +25,10 @@
 
 ### 未知问题(没测试)
 - HDMI
+
+## kext更新
+请查看commit来了解我更新了哪些kext
+
 ---
 
 # 第一步：安装
