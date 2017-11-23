@@ -36,7 +36,7 @@
 #### 注意
 - SSD用户最好先把分区转换为APFS(貌似安装时也会转换)
 - 进入系统后别急急忙忙登陆你尊贵的AppleID(原因请看下文)
-- 4K分辨率用户需要安装CoreDisplayFixup.kext
+- 4K分辨率用户需要安装[CoreDisplayFixup.kext](https://github.com/PMheart/CoreDisplayFixup)
 
 ## 从老版本系统上更新
 > 如果你想用全新的APFS，建议你还是全新安装好了！(我也是从10.12升级，不知道是不是我的姿势不正确而失败)
