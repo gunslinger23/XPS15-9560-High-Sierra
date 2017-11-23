@@ -54,6 +54,7 @@
 ## 以下方法二选一
 ### 1.安装kext到Clover
 1. 把Post-install/SLE-Kexts文件夹里面的全部kext复制到EFI/clover/kext/Other中
+> 由于kext并非安装到SLE中，请删掉`LiluFriend.kext`
 
 ### 2.安装kext到SLE(推荐)
 1. 把Post-install/SLE-Kexts文件夹里面的全部kext复制到/S/L/E中
@@ -62,7 +63,7 @@
 4. 打开EFI/clover/kext/Other
   - 1.保留`CoreDisplayFixup.kext`(仅针对4K屏用户)
   - 2.删掉其余所有kext
-  - 3.把Post-install/CLOVER-Kexts文件夹里的全部kext复制进去
+  - 3.把Post-install/CLOVER-Kexts文件夹里的全部kext复制进去(这些kext放在SLE会无法启动)
   
 # 第三步：登陆你的AppleID(不用白果三码)
 使用白果三码注意机子型号要匹配！否则我也不知道官方会对你的账号做什么 =w=
@@ -78,12 +79,13 @@
 
 # 第四步：解决二合一耳机接口
 1. 解压Post-install/ComboJack Installer.zip (感谢[KNNSpeed](https://www.tonymacx86.com/threads/guide-dell-xps-15-9560-4k-touch-1tb-ssd-32gb-ram-100-adobergb.224486/page-9#post-1539760)提供的补丁)
-2. 使用终端cd到`ComboJack Installer`文件夹
+2. 使用终端cd到ComboJack Installer文件夹
 3. 执行命令`./install.sh`(需要输入密码)
 4. 重启
 
 ### 使用提示
-插入耳机后弹出提示窗口(根据提示选择你插入的设备类型即可)
+- 插入耳机后弹出提示窗口(根据提示选择你插入的设备类型即可)
+- 虽然耳机能用了，不要对耳机音质抱有任何希望！买个DAC才是正解！
 
 # 尾巴
 这破系统已经浪费里我许多时间，但是换回来的使用体验是值得的
