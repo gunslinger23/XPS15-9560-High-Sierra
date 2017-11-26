@@ -64,6 +64,8 @@
 ### 2.安装kext到SLE(推荐)
 1. 把Post-install/SLE-Kexts文件夹里面的全部kext复制到/S/L/E中
 2. 请使用`Kext Utility`修复权限并建立缓存
+
+> 可用命令`sudo kextcache -i /`替代
 3. 先重启机子以防出问题再接着第四步
 4. 打开EFI/clover/kext/Other
   - 1.保留`CoreDisplayFixup.kext`(仅针对4K屏用户)
@@ -88,17 +90,19 @@
 3. 执行命令`./install.sh`(需要输入密码)
 4. 重启
 
-# 系统小版本更新
-1. 更新前请删掉你的EFI/clover/kext/Other中所有kext(注意备份)，然后把我提供的CLOVER/kext/Other里的kext复制进去，在更新完毕后即可还原回去。
-2. 请使用`Kext Utility`修复权限并建立缓存(针对kext安装在SLE)
-
-### 注意
-> kext安装在SLE或Clover里都必须要这样做，防止启动时引发错误而造成的更新文件损坏
-
 ### 使用提示
 - 插入耳机后弹出提示窗口(根据提示选择你插入的设备类型即可)
 - 睡眠唤醒后请把耳机拔出再插进去重新选择类型使其正常工作
 - 虽然耳机能用了，不要对耳机音质抱有任何希望！买个DAC才是正解！
+
+# 系统小版本更新
+1. 更新前请删掉你的EFI/clover/kext/Other中所有kext(注意备份)，然后把我提供的CLOVER/kext/Other里的kext复制进去，在更新完毕后即可还原回去。
+2. 请使用`Kext Utility`修复权限并建立缓存(针对kext安装在SLE)
+
+> 可用命令`sudo kextcache -i /`替代
+
+### 注意
+> kext安装在SLE或Clover里都必须要这样做，防止启动时驱动引发错误而造成的更新文件损坏
 
 # 尾巴
 这破系统已经浪费里我许多时间，但是换回来的使用体验是值得的
