@@ -1,2 +1,6 @@
 
 .DS_Store
+CLOVER/._config.plist
+._README.md
+Post-install/SLE-kexts/ACPIBatteryManager.kext/._Contents
+Post-install/SLE-kexts/._ACPIBatteryManager.kext
