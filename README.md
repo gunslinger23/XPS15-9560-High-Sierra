@@ -1,5 +1,5 @@
 # 前言
-可更新到10.13.1
+可更新到10.13.2
 ## 本机配置
 - CPU：Intel I7 7700HQ
 - 内存：原装16G 2400MHz DDR4
@@ -56,7 +56,7 @@
 > RehabMan建议将部分注入的kext放入到/S/L/E中，已获得更接近白苹果的启动方式。
 ## 以下方法二选一
 ### 1.安装kext到Clover
-1. 把Post-install/SLE-Kexts文件夹里面的全部kext复制到EFI/clover/kext/Other中
+1. 把Post-install/SLE-Kexts文件夹里面的全部kext复制到EFI/clover/kexts/Other中
 > 由于kext并非安装到SLE中，请删掉`LiluFriend.kext`
 
 ### 2.安装kext到SLE(推荐)
@@ -65,7 +65,7 @@
 
 > 可用命令`sudo kextcache -i /`替代
 3. 先重启机子以防出问题再接着第四步
-4. 打开EFI/clover/kext/Other
+4. 打开EFI/clover/kexts/Other
   - 1.保留`CoreDisplayFixup.kext`(仅针对4K屏用户)
   - 2.删掉其余所有kext
   - 3.把Post-install/CLOVER-Kexts文件夹里的全部kext复制进去(这些kext放在SLE会无法启动)
@@ -75,7 +75,7 @@
 ### 注意
 请保证目前你的电脑没有登陆过AppleID
 ### 开始你的操作
-工具：`Clover Configurator V4.53`
+工具：`Clover Configurator`
 1. 打开config.plist
 2. SMBIOS栏 在Serial Number隔壁有个Generate New小按钮，按下去随机生成Serial Number(不断按到你乐意停下来为止)
 3. Systeam Parameters栏 Custom UUID下也有一个Generate New小按钮，重复
@@ -94,7 +94,7 @@
 - 虽然耳机能用了，不要对耳机音质抱有任何希望！买个DAC才是正解！
 
 # 系统小版本更新
-1. 更新前请删掉你的EFI/clover/kext/Other中所有kext(注意备份)，然后把我提供的CLOVER/kext/Other里的kext复制进去，在更新完毕后即可还原回去。
+1. 更新前请删掉你的EFI/clover/kexts/Other中所有kext(注意备份)，然后把我提供的CLOVER/kexts/Other里的kext复制进去，在更新完毕后即可还原回去。
 2. 请使用`Kext Utility`修复权限并建立缓存(针对kext安装在SLE)
 
 > 可用命令`sudo kextcache -i /`替代
