@@ -45,6 +45,7 @@
 
 ## 从老版本系统上更新(未测试)
 > 不想折腾的话，我建议你还是全新安装好了！(我也是想从10.12升级，可能是我的姿势不正确而失败)
+
 #### 依然你还是要折腾就提醒一下你吧
 1. 把SSDT补丁、kext和config.plist可继续沿用
 2. [Clover](http://sourceforge.net/projects/cloverefiboot/)注意更新到最新版
@@ -54,16 +55,20 @@
 
 # 第二步：安装kext
 > RehabMan建议将部分注入的kext放入到/S/L/E中，已获得更接近白苹果的启动方式。
+
 ## 以下方法二选一
 ### 1.安装kext到Clover
 1. 把Post-install/SLE-Kexts文件夹里面的全部kext复制到EFI/clover/kexts/Other中
 > 由于kext并非安装到SLE中，请删掉`LiluFriend.kext`
+2. 打开EFI/clover/kexts/Other
+  - 把Post-install/CLOVER-Kexts文件夹里的全部kext复制进去(这些kext放在SLE会无法启动)
 
 ### 2.安装kext到SLE(推荐)
 1. 把Post-install/SLE-Kexts文件夹里面的全部kext复制到/S/L/E中
 2. 请使用`Kext Utility`修复权限并建立缓存
 
 > 可用命令`sudo kextcache -i /`替代
+
 3. 先重启机子以防出问题再接着第四步
 4. 打开EFI/clover/kexts/Other
   - 1.保留`CoreDisplayFixup.kext`(仅针对4K屏用户)
