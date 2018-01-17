@@ -60,17 +60,17 @@
 ### 1.安装kext到Clover
 1. 把Post-install/SLE-Kexts文件夹里面的全部kext复制到EFI/clover/kexts/Other中
 > 由于kext并非安装到SLE中，请删掉`LiluFriend.kext`
+
 2. 打开EFI/clover/kexts/Other
   - 把Post-install/CLOVER-Kexts文件夹里的全部kext复制进去(这些kext放在SLE会无法启动)
 
 ### 2.安装kext到SLE(推荐)
-1. 把Post-install/SLE-Kexts文件夹里面的全部kext复制到/S/L/E中
-2. 请使用`Kext Utility`修复权限并建立缓存
 
-> 可用命令`sudo kextcache -i /`替代
+> 强烈推荐使用`Kext Utility`以免去各种麻烦
 
-3. 先重启机子以防出问题再接着第四步
-4. 打开EFI/clover/kexts/Other
+1. 打开`Kext Utility`把Post-install/SLE-Kexts文件夹里面的全部kext扔进软件里等待完成
+2. 先重启机子以防出问题再接着第三步
+3. 打开EFI/clover/kexts/Other
   - 1.保留`CoreDisplayFixup.kext`(仅针对4K屏用户)
   - 2.删掉其余所有kext
   - 3.把Post-install/CLOVER-Kexts文件夹里的全部kext复制进去(这些kext放在SLE会无法启动)
