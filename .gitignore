@@ -4,3 +4,8 @@ CLOVER/._config.plist
 ._README.md
 Post-install/SLE-kexts/ACPIBatteryManager.kext/._Contents
 Post-install/SLE-kexts/._ACPIBatteryManager.kext
+Post-install/SLE-kexts/ACPIBatteryManager.kext/Contents/MacOS/._ACPIBatteryManager
+CLOVER/drivers64UEFI/._apfs.efi
+CLOVER/drivers64UEFI/._HFSPlus.efi
+Post-install/SLE-kexts/ACPIBatteryManager.kext/Contents/._Info.plist
+Post-install/SLE-kexts/ACPIBatteryManager.kext/Contents/._MacOS
