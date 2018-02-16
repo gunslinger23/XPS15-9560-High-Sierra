@@ -1,4 +1,4 @@
-本项目以同步到云码，方便访问github速度慢的朋友们
+本项目以同步到码云，方便访问github速度慢的朋友们
 [https://gitee.com/gunslinger/XPS15-9560-High-Sierra](https://gitee.com/gunslinger/XPS15-9560-High-Sierra)
 
 # 提示
