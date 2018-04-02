@@ -71,23 +71,20 @@
 
 ### 1.安装kext到Clover
 
-1. 把`Post-install/SLE-Kexts`文件夹里面的全部kext复制到`EFI/clover/kexts/Other`中
+1. 把`Post-install/kexts`文件夹里面的全部kext复制到`EFI/clover/kexts/Other`中
 
 > 由于kext并非安装到SLE中，请删掉`LiluFriend.kext`
 
-2. 打开`EFI/clover/kexts/Other`
-  - 把`Post-install/CLOVER-Kexts`文件夹里的全部kext复制进去(这些kext放在SLE会无法启动)
+> 非4K屏用户请删除CoreDisplayFixup.kext
 
 ### 2.安装kext到SLE(推荐)
 
 > 强烈推荐使用`Kext Utility`以免去各种麻烦
 
-1. 打开`Kext Utility`把`Post-install/SLE-Kexts`文件夹里面的全部kext扔进软件里等待完成
+1. 打开`Kext Utility`把`Post-install/kexts`文件夹里面的全部kext扔进软件里等待完成
 2. 先重启机子以防出问题再接着第三步
-3. 打开`EFI/clover/kexts/Other`
-  - 1.保留`CoreDisplayFixup.kext`(非4K屏用户删掉)
-  - 2.删掉其余所有kext
-  - 3.把`Post-install/CLOVER-Kexts`文件夹里的全部kext复制进去(这些kext放在SLE会无法启动)
+
+> 4K屏用户请把`Post-install/4K-kexts`里的kext扔进软件里
 
 # 第三步：登陆你的AppleID(不用白果三码)
 
