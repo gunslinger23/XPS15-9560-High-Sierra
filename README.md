@@ -18,6 +18,8 @@
 
 原装配的killer网卡是无解的！请用usb网卡或者直接换一个免驱的吧qwq
 
+若使用DW1830，你可以尝试加天线来增强2.4Ghz WIFI的稳定性
+
 ## 使用情况
 
 - 除了下面问题以外，其他全部都能用！
@@ -40,7 +42,7 @@
 
 ## 全新安装(大概流程)
 
-1. 制作启动U盘和启动-[教程](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/) (系统镜像请自己找，随便找一个懒人包也行。懒人包请把我提供的Clover覆盖懒人包里面的)
+1. 制作启动U盘和启动-[教程](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/) (系统镜像请自己找，随便找一个懒人包也行。使用懒人包的请把我提供的Clover覆盖懒人包里面的)
 2. 安装MacOS
 3. 把Clover安装到硬盘EFI中(详细教程自己找)
 
@@ -88,7 +90,7 @@
 
 # 第三步：登陆你的AppleID(不用白果三码)
 
-> 警告：不完成该步骤，登录AppleID将会面临封号的风险
+警告：不完成该步骤，登录AppleID将会面临封号的风险
 
 使用白果三码注意机子型号要匹配！否则我也不知道官方会对你的账号做什么 =w=
 
