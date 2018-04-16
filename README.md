@@ -3,8 +3,8 @@
 
 # 提示
 
-- 可直接更新到10.13.3
-> 本教程的Clover配置文件仅适用于我提供的Clover(v4334)。如果要自行更新Clover请自己折腾！
+- 可直接更新到10.13.4 (必须使用新版Clover v4424)
+> 本教程的Clover配置文件仅适用于我提供的Clover(v4424)。如果要自行更新Clover请自己折腾！
 
 ## 本机配置
 
@@ -17,6 +17,8 @@
 ### 关于WIFI网卡问题
 
 原装配的killer网卡是无解的！请用usb网卡或者直接换一个免驱的吧qwq
+
+若使用DW1830，你可以尝试加天线来增强2.4Ghz WIFI的稳定性
 
 ## 使用情况
 
@@ -40,7 +42,7 @@
 
 ## 全新安装(大概流程)
 
-1. 制作启动U盘和启动-[教程](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/) (系统镜像请自己找，随便找一个懒人包也行。懒人包请把我提供的Clover覆盖懒人包里面的)
+1. 制作启动U盘和启动-[教程](https://www.tonymacx86.com/threads/guide-booting-the-os-x-installer-on-laptops-with-clover.148093/) (系统镜像请自己找，随便找一个懒人包也行。使用懒人包的请把我提供的Clover覆盖懒人包里面的)
 2. 安装MacOS
 3. 把Clover安装到硬盘EFI中(详细教程自己找)
 
@@ -71,25 +73,24 @@
 
 ### 1.安装kext到Clover
 
-1. 把`Post-install/SLE-Kexts`文件夹里面的全部kext复制到`EFI/clover/kexts/Other`中
+1. 把`Post-install/kexts`文件夹里面的全部kext复制到`EFI/clover/kexts/Other`中
 
 > 由于kext并非安装到SLE中，请删掉`LiluFriend.kext`
 
-2. 打开`EFI/clover/kexts/Other`
-  - 把`Post-install/CLOVER-Kexts`文件夹里的全部kext复制进去(这些kext放在SLE会无法启动)
+> 非4K屏用户请删除CoreDisplayFixup.kext
 
 ### 2.安装kext到SLE(推荐)
 
 > 强烈推荐使用`Kext Utility`以免去各种麻烦
 
-1. 打开`Kext Utility`把`Post-install/SLE-Kexts`文件夹里面的全部kext扔进软件里等待完成
+1. 打开`Kext Utility`把`Post-install/kexts`文件夹里面的全部kext扔进软件里等待完成
 2. 先重启机子以防出问题再接着第三步
-3. 打开`EFI/clover/kexts/Other`
-  - 1.保留`CoreDisplayFixup.kext`(非4K屏用户删掉)
-  - 2.删掉其余所有kext
-  - 3.把`Post-install/CLOVER-Kexts`文件夹里的全部kext复制进去(这些kext放在SLE会无法启动)
+
+> 4K屏用户请把`Post-install/4K-kexts`里的kext扔进软件里
 
 # 第三步：登陆你的AppleID(不用白果三码)
+
+警告：不完成该步骤，登录AppleID将会面临封号的风险
 
 使用白果三码注意机子型号要匹配！否则我也不知道官方会对你的账号做什么 =w=
 
@@ -134,9 +135,9 @@
 
 我遇到的坑都在这里都告诉大家了
 
-希望能对许多正在等待升级10.13的小伙伴有帮助
+希望能对许多小伙伴有帮助
 
-小版本更新可能因为kext问题而导致启动不了，我会尽力更新一下kext
+小版本更新可能因为clover或kext问题而导致启动不了，请更新clover和kext
 
 欢迎各位小伙伴们来帮我完善～
 
