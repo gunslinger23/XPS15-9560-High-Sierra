@@ -26,7 +26,6 @@
 
 ### 已知问题
 
-- 触摸板设置空白
 - 雷电3接口不支持热插拔
 - 读卡器无法使用(BIOS禁用可以省电)
 - 独显无法使用(由于使用了Nvidia Optimus技术隔壁linux也是无解)
@@ -37,6 +36,8 @@
 请查看commit来了解我更新了哪些kext(更新系统前请保持驱动最新，以免出现不支持)
 
 ---
+
+# 以下为不完全教程
 
 # 第一步：安装
 
@@ -49,25 +50,20 @@
 #### 注意
 
 - 安装在SSD中最好使用APFS，你可以先转换一下(貌似安装时也会转换)。若安装在HDD中请不要使用(非常非常慢)
-- 进入系统后别急急忙忙登陆你尊贵的AppleID(请看第3步)
+- 进入系统后`不要`急急忙忙登陆你尊贵的AppleID(请看第3步)
 
 接下来看第二步
 
-## 从老版本系统上更新(未测试)
+## 从老版本系统上更新
 
-> 不想折腾的话，我建议你还是全新安装好了！(我也是想从10.12升级，可能是我的姿势不正确而失败)
-
-#### 依然你还是要折腾就提醒一下你吧
-
-1. 把SSDT补丁、kext和config.plist可继续沿用
-2. [Clover](http://sourceforge.net/projects/cloverefiboot/)注意更新到最新版
-3. APFS需要UEFI驱动支持，请把CLOVER/drivers64UEFI/apfs.efi添加到你的Clover中
-
- > 提供的config.plist中SMBIOS机型更改为MacBookPro14,3(配置与XPS15 9560更接近，支持KabyLake)，修改SMBIOS有风险
+1. 备份好三码(SN码、BSN码、UUID码)
+2. 替换成我的Clover
+3. 把三码填回去新的Clover配置文件里
+4. 更新MacOS
 
 # 第二步：安装kext
 
-> RehabMan建议将部分注入的kext放入到/S/L/E中，已获得更接近白苹果的启动方式。
+> RehabMan建议将部分注入的kext放入到/S/L/E中，已获得更接近白苹果的驱动加载方式
 
 ## 以下方法二选一
 
@@ -77,14 +73,13 @@
 
 > 由于kext并非安装到SLE中，请删掉`LiluFriend.kext`
 
-> 非4K屏用户请删除CoreDisplayFixup.kext
+> 非4K屏用户请删除`CoreDisplayFixup.kext`
 
 ### 2.安装kext到SLE(推荐)
 
-> 强烈推荐使用`Kext Utility`以免去各种麻烦
+> 必须使用`Kext Utility`等kext安装工具来安装，不然出问题了不要找我=w=
 
-1. 打开`Kext Utility`把`Post-install/kexts`文件夹里面的全部kext扔进软件里等待完成
-2. 先重启机子以防出问题再接着第三步
+1. 把`Post-install/kexts`文件夹里面的全部kext扔进软件里
 
 > 4K屏用户请把`Post-install/4K-kexts`里的kext扔进软件里
 
@@ -92,13 +87,11 @@
 
 警告：不完成该步骤，登录AppleID将会面临封号的风险
 
-使用白果三码注意机子型号要匹配！否则我也不知道官方会对你的账号做什么 =w=
+使用白果三码注意机子型号要匹配！
 
 > 请保证目前你的电脑没有登陆过AppleID，关于如何重设AppleID请看[这里](https://www.tonymacx86.com/threads/an-idiots-guide-to-imessage.196827/)
 
-### 开始你的操作
-
-工具：`Clover Configurator`
+打开工具：`Clover Configurator`
 1. 打开config.plist
 2. SMBIOS栏 在Serial Number隔壁有个Generate New小按钮，按下去随机生成Serial Number(不断按到你乐意停下来为止)
 3. Systeam Parameters栏 Custom UUID下也有一个Generate New小按钮，重复
@@ -118,16 +111,48 @@
 - 睡眠唤醒后请把耳机拔出再插进去重新选择类型使其正常工作
 - 虽然耳机能用了，不要对耳机音质抱有任何希望！买个DAC才是正解！
 
-# 系统小版本更新
+# 第五步：防止蓝牙WIFI异常
 
-1. 更新前请删掉你的`EFI/clover/kexts/Other`中所有kext(注意备份)，然后把我提供的`CLOVER/kexts/Other`里的kext复制进去，在更新完毕后即可还原回去。
+1. `系统偏好设置` - `节能` - `电源适配器` - `关闭显示器` 时间调长一点，最好调成`永不`
+2. 在`节能`里两个卡片里的电能小憩设置都`关掉`
+
+> 要不然你就等着痛苦吧
+
+## 补救方法
+
+重启 or 睡眠(等电源灯关掉后再按一下启动)
+
+# 选做：解决触控板设置空白
+
+> 注意：某些组合功能键会无法使用
+
+> 教程内容来自[@jardenliu](https://github.com/jardenliu)
+
+### 替换驱动
+
+1. 把`Post-install/touchpad/ApplePS2SmartTouchPad.kext`替换`VoodooPS2Controller.kext`
+
+### 设置手势
+
+1. `系统偏好设置`-`键盘`-`快捷键`-`启动台与程序船坞`,设置`显示启动台`快捷键，设置时，四指下滑。
+2. `系统偏好设置`-`键盘`-`快捷键`-`调度中心`,设置`显示通知中心`快捷键，设置时，双指从触摸板右边缘往左滑。
+
+### 手势说明
+- 双指左边缘往右滑，最小化当前窗口
+- 双指上边缘往下滑，最大化当前窗口 
+- 双指右边缘往左滑，显示通知中心
+- 三指上下左右滑，分别对应 `调度中心`, `应用程序窗口`, `向右移动一个空间`, `向左移动一个空间`。（偶尔误触）
+- 四指上下左右滑，分别对应 `显示桌面`, `显示启动台`, `后退`, `前进`
+- （个人使用的手势，可以根据个人喜好自行设置）
+
+# 系统小版本更新(仅针对驱动安装在SLE用户)
+
+1. 更新前请把我提供的`CLOVER/kexts/Other`里的kext复制到`EFI/clover/kexts/Other`中，在更新完毕后即可删掉。
 2. 请使用`Kext Utility`修复权限并建立缓存(针对kext安装在SLE)
 
 > 可用命令`sudo kextcache -i /`替代
 
-### 注意
-
-> kext安装在SLE或Clover里都必须要这样做，防止启动时驱动引发错误而造成的更新文件损坏
+> 小版本更新可能因为clover或kext问题而导致启动不了，请更新clover和kext
 
 # 尾巴
 
@@ -137,11 +162,10 @@
 
 希望能对许多小伙伴有帮助
 
-小版本更新可能因为clover或kext问题而导致启动不了，请更新clover和kext
-
 欢迎各位小伙伴们来帮我完善～
 
 ---
 # 特别感谢
 - [@RehabMan](https://github.com/RehabMan)、[tgmac](https://www.tonymacx86.com/members/tgmac.928166/)提供的教程和有关文件
 - [blazinsmokey](https://www.tonymacx86.com/members/blazinsmokey.1188623/)解决了wifi睡眠后无法使用的问题
+- [@jardenliu](https://github.com/jardenliu)提供的触摸板魔改版驱动支持多触控手势
