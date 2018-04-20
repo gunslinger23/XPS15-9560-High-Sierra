@@ -178,7 +178,7 @@
 				<key>Num Lock enabled at boot</key>
 				<false/>
 				<key>Swap alt and windows key</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>ProductID</key>
 			<integer>782</integer>
