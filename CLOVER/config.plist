@@ -10,6 +10,8 @@
 		<dict>
 			<key>Fixes</key>
 			<dict>
+				<key>AddHDMI</key>
+				<true/>
 				<key>FixHeaders</key>
 				<true/>
 			</dict>
@@ -289,7 +291,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 abm_firstpolldelay=16000 -disablegfxfirmware -v darkwake=1</string>
+		<string>dart=0 darkwake=1 -disablegfxfirmware abm_firstpolldelay=16000</string>
 		<key>CustomLogo</key>
 		<string>Alternate</string>
 		<key>Debug</key>
@@ -301,7 +303,7 @@
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>5</integer>
+		<integer>1</integer>
 		<key>XMPDetection</key>
 		<false/>
 	</dict>
@@ -347,6 +349,8 @@
 			<key>Inject</key>
 			<true/>
 		</dict>
+		<key>UseIntelHDMI</key>
+		<true/>
 	</dict>
 	<key>DisableDrivers</key>
 	<array>
@@ -374,6 +378,14 @@
 				</dict>
 			</array>
 		</dict>
+		<key>Hide</key>
+		<array>
+			<string>Recovery</string>
+			<string>Preboot</string>
+			<string>preboot</string>
+		</array>
+		<key>Language</key>
+		<string>zh_CN:0</string>
 		<key>Mouse</key>
 		<dict>
 			<key>Enabled</key>
@@ -391,19 +403,26 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>bluemac</string>
+		<string>Universe</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
+		<key>EDID</key>
+		<dict>
+			<key>Inject</key>
+			<false/>
+		</dict>
 		<key>Inject</key>
 		<dict>
 			<key>AMD</key>
 			<false/>
 			<key>Intel</key>
-			<false/>
+			<true/>
 			<key>Nvidia</key>
 			<false/>
 		</dict>
+		<key>ig-platform-id</key>
+		<string>0x591B0000</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -453,8 +472,6 @@
 				<data>
 				AQAAdSU=
 				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
 				<key>MatchOS</key>
 				<string>10.13.x</string>
 				<key>Name</key>
@@ -473,8 +490,6 @@
 				<data>
 				RiV1VCUwNHgA
 				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleBacklight</string>
 				<key>Replace</key>
@@ -492,8 +507,6 @@
 				AAAIAAIAAACYAAAAAgQKAAAIAACHAQAAAwYKAAAEAACH
 				AQAA/wAAAAEAAAAgAAAA
 				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
 				<key>Replace</key>
@@ -511,8 +524,6 @@
 				<data>
 				VUiJ5UFXQVZBVUFUU0iB7DgB
 				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
 				<key>MatchOS</key>
 				<string>10.12.x,10.13.x</string>
 				<key>Name</key>
@@ -531,8 +542,6 @@
 				<data>
 				SIX/dEdIiwc=
 				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
 				<key>Name</key>
 				<string>IOBluetoothFamily</string>
 				<key>Replace</key>
@@ -549,8 +558,6 @@
 				<data>
 				g32UDw+DlwQAAA==
 				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
 				<key>MatchOS</key>
 				<string>10.13.x</string>
 				<key>Name</key>
@@ -558,6 +565,24 @@
 				<key>Replace</key>
 				<data>
 				g32UD5CQkJCQkA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable board-id check to prevent no signal (c) lvs1974, Pike R. Alpha, vit9696</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				ugUAAAA=
+				</data>
+				<key>MatchOS</key>
+				<string>10.9.3,10.9.4,10.9.5,10.10.x,10.11.x,10.12.x,10.13.x</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleGraphicsDevicePolicy</string>
+				<key>Replace</key>
+				<data>
+				ugAAAAA=
 				</data>
 			</dict>
 		</array>
@@ -570,7 +595,7 @@
 		<string>0x67</string>
 		<key>ROM</key>
 		<data>
-		dzhA3JaZ
+		WDNsmCmL
 		</data>
 	</dict>
 	<key>SMBIOS</key>
@@ -586,7 +611,7 @@
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02709609GUFF4KA8</string>
+		<string>C02744200GUF504JC</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -614,7 +639,7 @@
 		<key>ProductName</key>
 		<string>MacBookPro14,3</string>
 		<key>SerialNumber</key>
-		<string>C02TCU89HTD5</string>
+		<string>C02VNR34HTD5</string>
 		<key>SmUUID</key>
 		<string>5938DFAB-47D4-467B-AB70-EB055F98298B</string>
 		<key>Version</key>
@@ -625,7 +650,7 @@
 		<key>BacklightLevel</key>
 		<string>0</string>
 		<key>CustomUUID</key>
-		<string>5938DFAB-47D4-467B-AB70-EB055F98298B</string>
+		<string>360F337C-54D4-44E9-B010-49E350761DD1</string>
 		<key>InjectKexts</key>
 		<string>Yes</string>
 		<key>InjectSystemID</key>
