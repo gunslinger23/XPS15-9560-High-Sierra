@@ -1,4 +1,8 @@
-本项目以同步到码云，方便访问github速度慢的朋友们
+## 该仓库已停止更新支持！
+
+想使用 MacOS 10.14/10.15 的朋友可以去看看 [jardenliu](https://github.com/jardenliu) 的配置文件
+
+本项目已同步到码云，方便访问github速度慢的朋友们
 [https://gitee.com/gunslinger/XPS15-9560-High-Sierra](https://gitee.com/gunslinger/XPS15-9560-High-Sierra)
 
 # 提示
@@ -18,7 +22,7 @@
 
 原装配的killer网卡是无解的！请用usb网卡或者直接换一个免驱的吧qwq
 
-若使用DW1830，你可以尝试加天线来增强2.4Ghz WIFI的稳定性
+若使用DW1830，你可以尝试加天线来增强2.4Ghz WIFI的稳定性
 
 ## 使用情况
 
